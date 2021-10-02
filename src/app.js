@@ -3,6 +3,7 @@
 
 const express = require('express')
 const fs = require('fs');
+var cors = require('cors')
 // const mongoose = require('mongoose')
 const validator = require('validator')
 const jsonParse = express.json()
@@ -15,6 +16,7 @@ const FeedbackRouter = require('./routers/feedback')
 
 let app = express();
 
+app.use(cors())
 app.use(express.json()) // 
 app.use(FeedbackRouter)
 
