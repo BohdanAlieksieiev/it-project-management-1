@@ -16,9 +16,13 @@ const FeedbackRouter = require('./routers/feedback')
 
 let app = express();
 
-app.use(cors())
-app.use(express.json()) // 
-app.use(FeedbackRouter)
+const middleware = [
+    cors(),
+    express.json(),
+    FeedbackRouter
+]
+
+app.use(middleware);
 
 app.listen(3000, () => { // запуск на порті
     console.log("Example app listening on port 3000");
