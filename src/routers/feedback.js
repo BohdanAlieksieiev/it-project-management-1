@@ -23,19 +23,15 @@ router.get('/', async function (req, res) {
 
 router.post('/form', async function (req, res) {
     const feedback = new Feedback(req.body)
-
-    await sendEmail.map( item => {
-        email.sendEmail(item, feedback);
-    })
-    
  
-    feedback.save().then(() => {
+    await feedback.save().then(() => {
+        sendEmail.map( item => {
+            email.sendEmail(item, feedback);
+        })
         res.send(feedback)
     }).catch((err) => {
         res.status(401).send(err.message)
     })
-
-    res.send('Hello world');
 });
 
 module.exports = router;
