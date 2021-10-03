@@ -2,22 +2,9 @@ const express = require('express')
 const Feedback = require('../model/feedback')
 const email = require('../email')
 const router = express.Router()
-const sendEmail = ["faviyiy365@carpetd.com", "rus.chumak.1999@mail.ru", "bohdan26012000@gmail.com"]
+const sendEmail = ["faviyiy365@carpetd.com", "rus.chumak.1999@mail.ru", "bohdan26012000@gmail.com", "pavlikbogdan22@gmail.com"]
 
-router.get('/', async function (req, res) {
-    // const arrObject = [{
-    //     name: 'Ruslan',
-    //     email: 'ruslan.chumak@gmail.com'
-    // }]
-
-    // await sendEmail.map( item => {
-    //     console.log(item)
-    //     email.sendEmail(item, arrObject);
-    // })
-    // res.render("../views/index.hbs", {
-    //     arr: arrObject
-    // })
-
+router.get('/', async function (req, res) { 
     res.send('Hello world');
 });
 
