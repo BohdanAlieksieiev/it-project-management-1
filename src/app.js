@@ -7,7 +7,7 @@ const FeedbackRouter = require('./routers/feedback')
 
 let app = express();
 
-const port = process.env.PORT || 8080;
+const port = process.env.PORT || 3000;
 console.log(port);
 
 const middleware = [

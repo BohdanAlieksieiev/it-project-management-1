@@ -1,3 +1,4 @@
+const { Mixed } = require('mongoose')
 const mongoose = require('mongoose')
 let FeedbackSchema = new mongoose.Schema({
     name:{
@@ -8,6 +9,9 @@ let FeedbackSchema = new mongoose.Schema({
         type:String,
         required: true
     },
+    answers: {
+        type: Mixed
+    }
 })
 
 
