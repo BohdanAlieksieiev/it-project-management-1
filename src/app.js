@@ -7,6 +7,9 @@ const FeedbackRouter = require('./routers/feedback')
 
 let app = express();
 
+const port = process.env.PORT || 8080;
+console.log(port);
+
 const middleware = [
     cors(),
     jsonParse,
@@ -15,6 +18,6 @@ const middleware = [
 
 app.use(middleware);
 
-app.listen(8080, () => {
-    console.log("Example app listening on port 8080");
+app.listen(port, () => {
+    console.log("Example app listening on port " + port);
 });
