@@ -10,7 +10,7 @@ let app = express();
 
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 8080;
 console.log(port);
 
 const middleware = [
