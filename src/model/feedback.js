@@ -1,7 +1,12 @@
 const mongoose = require('mongoose')
 let FeedbackSchema = new mongoose.Schema({
-    text:{
+    name:{
         type:String,
+        required: true
+    },
+    email:{
+        type:String,
+        required: true
     },
 })
 
