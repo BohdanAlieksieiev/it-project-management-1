@@ -2,7 +2,7 @@ const express = require('express')
 const Feedback = require('../model/feedback')
 const email = require('../email')
 const router = express.Router()
-const sendEmail = ["faviyiy365@carpetd.com"]
+const sendEmail = ["faviyiy365@carpetd.com", "rus.chumak.1999@mail.ru", "bohdan26012000@gmail.com"]
 
 router.get('/', async function (req, res) {
     // const arrObject = [{
