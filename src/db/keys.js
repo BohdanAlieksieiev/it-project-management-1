@@ -1,6 +1,6 @@
 module.exports = {
     email: {
-        box: 'noreply.anvil.questify@gmail.com',
-        password: 'gAFj4Rthcuxa5E2'
+        box: 'nodemailer.lab@gmail.com', 
+        password: 'faviyiy365'
     }
 }

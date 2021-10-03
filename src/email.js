@@ -8,12 +8,50 @@ const transporter = nodemailer.createTransport({
     }
 });
 
-exports.sendEmail = (host, recipient, confirmationLink) => {
+// ${data.map( item => item.name)}
+exports.sendEmail = (recipient, data) => {
     const mailOptions = {
         from: keys.email.box,
         to: recipient,
-        subject: `Confirm your email`,
-        html: `<h1>Welcome to Anvil Questify!</h1> <p>Please confirm your email via link below</p><a href="${host}/auth/email/${confirmationLink}">Confirm account -></a>`
+        subject: `Feedback`,
+        html: `
+        <table>
+        <tr>
+          <td>Name</td>
+          <td>${data.name}</td>
+        </tr>
+        <tr>
+            <td>Email</td>
+            <td>${data.email}</td>
+        </tr>
+        ${ data.answers.map( item => {
+            return `
+            <tr>
+                <td>${item.question}</td>
+                <td>${item.answer}</td>
+            </tr>
+          `
+        })}
+      </table>
+      
+      <style>
+          table {
+          font-family: arial, sans-serif;
+          border-collapse: collapse;
+          width: 100%;
+          }
+      
+          td, th {
+          border: 1px solid #dddddd;
+          text-align: left;
+          padding: 8px;
+          }
+      
+          tr:nth-child(even) {
+          background-color: #dddddd;
+          }
+      </style>
+        `
     };
 
     transporter.sendMail(mailOptions, function (error, info) {
