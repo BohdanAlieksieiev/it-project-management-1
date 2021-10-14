@@ -9,6 +9,9 @@ let FeedbackSchema = new mongoose.Schema({
         type:String,
         required: true
     },
+    hashKey: {
+        type:String,
+    },
     answers: {
         type: Mixed
     }

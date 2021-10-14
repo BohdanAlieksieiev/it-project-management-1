@@ -9,49 +9,13 @@ const transporter = nodemailer.createTransport({
 });
 
 // ${data.map( item => item.name)}
-exports.sendEmail = (recipient, data) => {
+exports.sendEmail = (recipient, host, hashKey) => {
+
     const mailOptions = {
         from: keys.email.box,
         to: recipient,
-        subject: `Feedback`,
-        html: `
-        <table>
-        <tr>
-          <td>Name</td>
-          <td>${data.name}</td>
-        </tr>
-        <tr>
-            <td>Email</td>
-            <td>${data.email}</td>
-        </tr>
-        ${ data.answers.map( item => {
-            return `
-            <tr>
-                <td>${item.question}</td>
-                <td>${item.answer}</td>
-            </tr>
-          `
-        })}
-      </table>
-      
-      <style>
-          table {
-          font-family: arial, sans-serif;
-          border-collapse: collapse;
-          width: 100%;
-          }
-      
-          td, th {
-          border: 1px solid #dddddd;
-          text-align: left;
-          padding: 8px;
-          }
-      
-          tr:nth-child(even) {
-          background-color: #dddddd;
-          }
-      </style>
-        `
+        subject: `Дані із форми`,
+        html: `<h1>Усі дані із заповненої форми!</h1><a href="${host}/form/${hashKey}">Посилання на форму -></a>`
     };
 
     transporter.sendMail(mailOptions, function (error, info) {
