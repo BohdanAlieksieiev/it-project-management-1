@@ -5,7 +5,7 @@ const md5 = require('md5');
 const router = express.Router()
 const sendEmail = ["rus.chumak.1999@mail.ru", "bohdan26012000@gmail.com", "pavlikbogdan22@gmail.com"] // , "rus.chumak.1999@mail.ru", "bohdan26012000@gmail.com", "pavlikbogdan22@gmail.com"
 
-router.get('/', async function (req, res) { 
+router.get('/', async function (req, res) {
     res.send('Hello world');
 });
 
